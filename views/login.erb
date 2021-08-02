@@ -1,0 +1,10 @@
+<section>
+	<form action="/admin" method="post">
+		<label for="password">Enter Password:</label>
+		<br>
+		<input class="nameBox" type="text" autocomplete="off" name="password" id="Password">
+		<br>
+		<%= flash[:notice] if flash[:notice] %>
+		<input class="button" type="submit" value="Check">
+	</form>
+</section>

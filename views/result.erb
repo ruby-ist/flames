@@ -1,0 +1,25 @@
+<section class="result-page">
+	<div class="answer-box">
+		<%= @answer %>
+	</div>
+
+	<div class="names">
+		<p><%= @person.name %><span style="color:#F87B35"> x </span><%= @person.crushName %></p>
+	</div>
+
+	<div class="quotes">
+		<%= @quote[0] %>
+	</div>
+
+	<div class="by">
+		<%= "- " + @quote[1] if @quote[1]%>
+	</div>
+
+	<div class="para">
+		Flames. Find your luck with a person. It could be a colleague, it could be your team mate or soul mate, it could be someone who agrees with you, it could be someone who understands you, it could be a person with same mindset as you, it could be your best friend forever or it could be some kindly person that you randomly walk into. But they are reason the you're viewing it. Not satisfied with result? <a href="/">Try again!</a> Maybe you did a typo ;)
+	</div>
+</section>
+
+<img class="img4" src="images/heart1.png">
+<img class="img5" src="images/heart2.png">
+<img class="img6" src="images/heart3.png">

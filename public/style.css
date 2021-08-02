@@ -1,0 +1,325 @@
+body{
+	background-color: #F8F2ED;
+	padding: 0% 10%;
+	font-family: 'Comic Neue', cursive;
+	overflow: auto;
+}
+
+.heading{
+	background: -webkit-linear-gradient(360deg,#F87B35,#EFC942);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color:  transparent;
+}
+
+header{
+	margin-top: 50px;
+}
+
+header h1{
+	font-size: 3.4rem;
+	font-family: 'Patrick Hand SC', cursive;
+}
+
+.entry{
+	margin-top: 100px;
+}
+
+
+label{
+	font-family: 'Paprika', sans-serif;
+	font-weight: 100;
+	margin: 10px 0px;
+	font-size: 1.3rem;
+	background: -webkit-linear-gradient(360deg,#F87B35 69%,#EFC942);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color:  transparent;
+}
+
+.nameBox{
+	width: 100%;
+	padding:10px;
+	line-height: 2rem;
+	border: 1px solid black;
+	border-radius: 11px;
+	background-color: #F8F2ED;
+	margin-bottom: 20px;
+	font-size: 1.5rem;
+}
+
+.nameBox:hover {
+	outline: none;
+	border: 2px solid transparent;
+	background: -webkit-linear-gradient(#F8F2ED,#F8F2ED) padding-box, -webkit-linear-gradient(300deg,#F87B35,#EFC942) border-box;
+}
+
+.notice{
+	color: #F87B35;
+}
+
+.button{
+	text-align: center;
+	display: block;
+	margin: 40px auto 340px;
+	width: 135px;
+	height: 65px;
+	border: none;
+	border-radius: 11px;
+	font-size: 2rem;
+	background: -webkit-linear-gradient(300deg,#F87B35,#EFC942);
+	font-family: 'Rancho', cursive;
+	color: #F8F2ED;
+}
+
+.img1{
+	width: 110px;
+	height: 100px;
+	position: absolute;
+	top: 110px;
+	right: 5px;
+	opacity: 0.69;
+	z-index: -1;
+}
+
+.img2{
+	width: 120px;
+	height: 190px;
+	position: absolute;
+	top: 540px;
+	left: -40px;
+	opacity: 0.75;
+	z-index: -1;
+}
+
+.img3{
+	width: 120px;
+	height: 110px;
+	position: absolute;
+	top: 765px;
+	right: 40px;
+	opacity: 0.8;
+	z-index: -1;
+}
+
+ul{
+	list-style: none;
+	line-height: 200%;
+	padding-left: 0;
+}
+
+a{
+	text-decoration: none;
+	color: #F8F2ED;
+}
+
+a:hover {
+	color: #111;
+}
+
+footer{
+	margin: 0 -13%;
+	background: -webkit-linear-gradient(300deg,#F87B35,#EFC942);
+	text-align: center;
+	padding: 15%;
+	font-family: sans-serif;
+	font-size: 1.2rem;
+	font-weight: 100;
+}
+
+hr{
+	margin: 10vw 0;
+}
+
+.container-fluid{
+	font-family: 'Patrick Hand SC', sans-serif;
+}
+
+.col-2:hover{
+	color:  #F8F2ED;
+}
+
+.top{
+	color:  #F8F2ED;
+	text-align: left;
+	visibility: hidden;
+}
+
+.top .col-4{
+	padding-left: 0%;
+	padding-bottom: 6px;
+}
+
+.bottom{
+	color:  #F8F2ED;
+	text-align: right;
+	visibility: hidden;
+}
+
+.bottom .col-4{
+	padding-right: 0%;
+	padding-top: 6px;
+}
+
+#cover{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.4);
+	width: 100vw;
+	height: 100vh;
+	z-index: 1;
+	display: none;
+}
+
+.sidebar{
+	background: -webkit-linear-gradient(300deg,#F87B35,#EFC942);
+	height: 100vh;
+	width: 63vw;
+	position: fixed;
+	top: 0;
+	right: -63vw;
+	transition: right 0.3s;
+	overflow-x: hidden;
+	z-index: 2;
+	padding: 0 6vw;
+	text-align: justify;
+}
+
+.close{
+	font-family: sans-serif;
+	display: block;
+	margin: 4vw 0 8vw;
+	font-size: 1.4rem;
+	font-weight: 200;
+	color: black;
+}
+
+.result-page{
+	margin-top: 13vh;
+	text-align: center;
+}
+
+.answer-box{
+	height: 48vw;
+	width: 60vw;
+	background: url("images/flaming-heart.jpeg") padding-box, -webkit-linear-gradient(300deg,#F87B35,#EFC942) border-box;
+	background-size: cover;
+	margin: 72px auto 11px;
+	border: 2px solid transparent;
+	border-radius: 11px;
+	padding-top: 22%;
+	font-family: 'Rancho', cursive;
+	font-size: 1.7rem;
+	color: #F87B35;
+}
+
+
+.names{
+	margin-bottom: 6vh;
+	font-size: 1.25rem;
+}
+
+.quotes{
+	font-size: 1.4rem;
+	margin-bottom: 4vh;
+}
+
+.para{
+	margin: 40px 0 200px;
+	padding: 0 5vw;
+	text-align: justify;
+}
+
+.para a{
+	color: #F87B35;
+}
+
+.img4{
+	width: 110px;
+	height: 100px;
+	position: absolute;
+	top: 120px;
+	left: -20px;
+	opacity: 0.69;
+	z-index: -1;
+}
+
+.img5{
+	width: 120px;
+	height: 190px;
+	position: absolute;
+	top: 500px;
+	right: -2px;
+	opacity: 0.75;
+	z-index: -1;
+}
+
+.img6{
+	width: 120px;
+	height: 110px;
+	position: absolute;
+	top: 900px;
+	left: -23px;
+	opacity: 0.8;
+	z-index: -1;
+}
+
+
+.users{
+	margin-top: 8vw;
+}
+
+.record{
+	margin-bottom: -1px;
+}
+
+.cell{
+	border: 1px solid #F87B35;
+	margin-right: -1px;
+}
+
+.logout{
+	text-align: center;
+	display: inline-block;
+	margin: 50px auto 240px;
+	width: 130px;
+	height: 45px;
+	border: none;
+	border-radius: 11px;
+	font-size: 1.5rem;
+	background: -webkit-linear-gradient(300deg,#F87B35,#EFC942);
+	font-family: 'Rancho', cursive;
+	color: #F8F2ED;
+	padding-top: 5px;
+}
+
+
+
+@media screen and (min-width: 660px){
+	body{
+		padding: 0% 23%;
+	}
+
+	footer{
+		margin: 0% -45%;
+	}
+
+	.answer-box{
+		height: 25vw;
+		width: 32vw;
+		padding-top: 18%;
+		font-size: 2.4rem;
+	}
+
+	.bottom .col-4{
+		padding-right: 6%;
+	}
+
+	.top .col-4{
+		padding-left: 6%;
+	}
+}
+
+
+
+
+

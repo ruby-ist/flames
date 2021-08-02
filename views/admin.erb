@@ -1,0 +1,13 @@
+<section>
+	<div class="containe users">
+		<% @lovers.each do |i| %>
+		<div class="row record">
+			<div class="col-1 cell"><%= i.id %></div>
+			<div class="col-4 cell"><%= i.name %></div>
+			<div class="col-4 cell"><%= i.crushName %></div>
+			<div class="col-3 cell"><%= expand i.result %></div>
+		</div>
+		<% end %>
+	</div>
+	<a class="logout" href="/logout">Log Out</a>
+</section>

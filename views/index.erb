@@ -1,0 +1,21 @@
+<section>
+    <form class="entry" action="/" method="post">
+        <label for="Name">Your name:</label><br>
+        <input class="nameBox" type="text" name="name" id="Name" autocomplete="off" spellcheck="false" ><br>
+        <label for="CrushName">Your crush name:</label><br>
+        <input class="nameBox" type="text" name="crushName" id="CrushName" autocomplete="off" spellcheck="false" ><br>
+         <% if flash[:error] %>
+         <div class="notice">
+            <%= flash[:error] %>
+        </div>
+        <% end %>
+        <input class="button" type="submit" value="Spark it !">
+    </form>
+</section>
+
+<img class="img1" src="images/heart1.png">
+<img class="img2" src="images/heart2.png">
+<img class="img3" src="images/heart3.png">
+
+
+
