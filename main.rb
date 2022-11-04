@@ -24,7 +24,7 @@ end
 
 class Lovers < ActiveRecord::Base
     validates :name, presence: true, format: {with: /\A[a-zA-Z\s]*\z/}
-    validates :crushName, presence: true, format: {with: /\A[a-zA-Z\s]*\z/}
+    validates :crush_name, presence: true, format: {with: /\A[a-zA-Z\s]*\z/}
 end
 
 
@@ -37,11 +37,11 @@ end
 post "/" do
 	person = Lovers.new
 	person.name = params[:name]
-	person.crushName = params[:crushName]
+	person.crush_name = params[:crushName]
 
-	if person.name == "" || person.crushName == ""
+	if person.name == "" || person.crush_name == ""
 		redirect "/", flash[:error] = "Boxes are empty!"
-	elsif person.name == person.crushName
+	elsif person.name == person.crush_name
 		redirect "/", flash[:error] = "Love youself, no matter what!"
 	end
 
