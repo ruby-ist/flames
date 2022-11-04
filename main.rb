@@ -7,13 +7,7 @@ require 'bcrypt'
 load 'flames.rb'
 load 'quotes.rb'
 
-configure :development do
-    set :database, {adapter: 'sqlite3', database: 'flames.db'}
-end
-
-configure :production do
-	set :database, {adapter: 'cockroachdb', database: ENV['DATABASE_URL']}
-end
+set :database_file, "config/database.yml"
 
 class Admin < ActiveRecord::Base
     include BCrypt
