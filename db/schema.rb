@@ -11,7 +11,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_11_04_133229) do
-  create_table "admin", force: :cascade do |t|
+  create_table "admins", force: :cascade do |t|
+    t.string "password_hash"
   end
 
   create_table "lovers", force: :cascade do |t|
