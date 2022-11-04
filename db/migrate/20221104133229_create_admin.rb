@@ -1,13 +1,17 @@
 class CreateAdmin < ActiveRecord::Migration[7.0]
-  def change
-    create_table :admins do |t|
-      t.string :password_hash
-    end
+    def change
+        unless table_exists?(:admins)
+            create_table :admins do |t|
+                t.string :password_hash
+            end
+        end
 
-    create_table :lovers do |t|
-      t.string :name
-      t.string :crushName
-      t.string :result
+        unless table_exists?(:lovers)
+            create_table :lovers do |t|
+                t.string :name
+                t.string :crushName
+                t.string :result
+            end
+        end
     end
-  end
 end
