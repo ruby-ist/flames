@@ -2,39 +2,31 @@ require 'sinatra'
 require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
 
-require 'dm-core'
-require 'dm-migrations'
-require 'dm-validations'
-require 'dm-types'
+require 'sinatra/activerecord'
 require 'bcrypt'
 load 'flames.rb'
 load 'quotes.rb'
 
-configure :development do
-	DataMapper.setup(:default,"sqlite3://#{Dir.pwd}/flames.db")
+set :database_file, "config/database.yml"
+
+class Admin < ActiveRecord::Base
+    include BCrypt
+
+    def password
+        @password ||= Password.new(password_hash)
+    end
+
+    def password=(new_password)
+        @password = Password.create(new_password)
+        self.password_hash = @password
+    end
 end
 
-configure :production do
-	DataMapper.setup(:default,ENV["DATABASE_URL"])
+class Lovers < ActiveRecord::Base
+    validates :name, presence: true, format: {with: /\A[a-zA-Z\s]*\z/}
+    validates :crushName, presence: true, format: {with: /\A[a-zA-Z\s]*\z/}
 end
 
-class Admin
-	include DataMapper::Resource
-	property :id, Serial
-	property :password, BCryptHash
-end
-
-DataMapper.finalize.auto_upgrade!
-
-class Lovers
-	include DataMapper::Resource
-	property :id, Serial
-	property :name, String, :required => true, :format => /^[a-zA-Z\s]*$/ 
-	property :crushName, String, :required => true, :format => /^[a-zA-Z\s]*$/
-	property :result, String
-end
-
-DataMapper.finalize.auto_upgrade!
 
 enable :sessions
 
@@ -58,7 +50,7 @@ post "/" do
 	if person.result == "x"
 		redirect "/", flash[:error] = "Flames had a choke processing what you juzt entered!"
 	end
-	
+
 	if person.save
 		redirect "/#{person.id}"
 	else
@@ -81,7 +73,7 @@ post "/admin" do
 		admin.password = params[:password]
 		admin.save
 	end
-	
+
 	admin = Admin.first
 	if admin.password == params[:password]
 		session[:admin] = true
@@ -97,7 +89,7 @@ get "/logout" do
 end
 
 get "/:id" do
-	@person = Lovers.get params[:id]
+	@person = Lovers.find params[:id]
 	@answer = expand @person.result
 	@quote = quotes[@person.result].sample
 	if @answer != nil
